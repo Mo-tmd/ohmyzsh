@@ -39,7 +39,14 @@ if [[ -n "${terminfo[kcuu1]}" ]]; then
   bindkey -M emacs "${terminfo[kcuu1]}" up-line-or-beginning-search
   bindkey -M viins "${terminfo[kcuu1]}" up-line-or-beginning-search
   bindkey -M vicmd "${terminfo[kcuu1]}" up-line-or-beginning-search
+
+  # Copied from https://github.com/ohmyzsh/ohmyzsh/pull/11625/
+  # Same behavior for [Ctrl-P]
+  bindkey -M emacs '^P' up-line-or-beginning-search
+  bindkey -M viins '^P' up-line-or-beginning-search
+  bindkey -M vicmd '^P' up-line-or-beginning-search
 fi
+
 # Start typing + [Down-Arrow] - fuzzy find history backward
 if [[ -n "${terminfo[kcud1]}" ]]; then
   autoload -U down-line-or-beginning-search
@@ -48,6 +55,12 @@ if [[ -n "${terminfo[kcud1]}" ]]; then
   bindkey -M emacs "${terminfo[kcud1]}" down-line-or-beginning-search
   bindkey -M viins "${terminfo[kcud1]}" down-line-or-beginning-search
   bindkey -M vicmd "${terminfo[kcud1]}" down-line-or-beginning-search
+
+  # Copied from https://github.com/ohmyzsh/ohmyzsh/pull/11625/
+  # Same behavior for [Ctrl-N]
+  bindkey -M emacs '^N' down-line-or-beginning-search
+  bindkey -M viins '^N' down-line-or-beginning-search
+  bindkey -M vicmd '^N' down-line-or-beginning-search
 fi
 
 # [Home] - Go to beginning of line
